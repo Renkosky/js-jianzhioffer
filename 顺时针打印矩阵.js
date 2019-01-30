@@ -1,15 +1,19 @@
-function Martix(martix) {
-  var rows = martix.length
-  var cols = martix[0].length
+function printMatrix(matrix) {
+  if (matrix == null || matrix.length == 0) return
+  var rows = matrix.length
+  var cols = matrix[0].length
   var start = 0
   var result = []
-  while (rows > starts * 2 && cols > starty * 2) {
-    var endX = rows - 1 - start
-    var endY = cols - 1 - start
+
+  while (cols > start * 2 && rows > start * 2) {
+    //x，y方向边界值
+    var endX = cols - 1 - start
+    var endY = rows - 1 - start
     //左到右
-    for (var i = start; i < endX; i++) {
-      result.push(martix[start][i])
+    for (var i = start; i <= endX; i++) {
+      result.push(matrix[start][i])
     }
+    //上到下
     if (start < endY) {
       for (var i = start + 1; i <= endY; i++) {
         result.push(matrix[i][endX])
@@ -31,4 +35,5 @@ function Martix(martix) {
 
     start++
   }
+  return result
 }
